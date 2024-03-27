@@ -19,6 +19,9 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
+@import url('https://fonts.cdnfonts.com/css/bebas');
+@import url('https://fonts.cdnfonts.com/css/myriad-pro?styles=947');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -396,7 +399,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
+	font-family: var(--ubuntu-font);
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -657,6 +660,10 @@ a:hover, a:active {
 	top: 100%;
 	left: -999em;
 	z-index: 99999;
+	background-color: #fff;
+    border: 1px solid;
+    width: 100%;
+    margin-left: -14%;
 }
 
 .main-navigation ul ul ul {
@@ -670,7 +677,8 @@ a:hover, a:active {
 }
 
 .main-navigation ul ul a {
-	width: 200px;
+	width: 100%;
+	text-align: center;
 }
 
 .main-navigation ul li:hover > ul,
@@ -982,4 +990,238 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+/*--------------------------------------------------------------
+## Custom style | By Hyppolite
+--------------------------------------------------------------*/
+/* Design System */
+:root {
+	/* colors */
+	--ct-orange: #ff6200;
+	--ct-darkorange: #be3600;
+	--ct-white: #ffffff;
+	--ct-lighter: #f6f6f6;
+	--ct-silver: #ededed;
+	--ct-gray-01: #313131;
+	--ct-gray-02: #333333;
+	--ct-gray-03: #434343;
+	--ct-gray-04: #454545;
+	--ct-gray-05: #595959;
+	--ct-gray-06: #878787;
+	--ct-gray-07: #929292;
+
+	/* Text configuration */
+    --bebas-font: 'Bebas';
+    --myriadpro-font: 'Myriad Pro';
+    --opensans-font: 'Open Sans';
+    --ubuntu-font: 'Ubuntu';
+}
+
+@media screen and (min-width: 37.5em) {
+	.ct-center,.site-content,footer
+	{
+		max-width: 1024px;
+		margin: 0 auto;
+	}
+	.ct-center {
+		display: flex;
+		align-items: center;
+	}
+	.ct-auth {
+		text-align: right;
+	}
+	.menu-toggle,.menu.nav-menu {
+		float: right;
+		position: relative;
+	}
+	.menu.nav-menu > li {
+		padding: 15px;
+	}
+	.menu.nav-menu > li > a {
+		padding-bottom: 7px;
+	}
+	ul.sub-menu > li{
+		padding: 4px 6px;
+		width: 100%;
+	}
+	.ct-footer {
+		display: flex;
+		gap: 80px;
+	}
+	.ct-contact .ct-line {
+		width: 470px;
+	}
+	.ct-reachus .ct-line {
+		width: 408px;
+	}
+}
+@media screen and (max-width: 37.5em) {
+	.site-content,footer
+	{
+		padding: 0 5px;
+	}
+	.ct-callus,.ct-auth {
+		text-align: center;
+	}
+	.site-branding{
+		margin-bottom: 10px;
+	}
+	.main-navigation li {
+		padding: 8px;
+		text-align: center;
+		float: none;
+	}
+	.main-navigation ul li:hover > ul,
+	.main-navigation ul li.focus > ul {
+		width: 96%;
+		padding: 0;
+	}
+	.main-navigation ul ul li:hover > ul,
+	.main-navigation ul ul li.focus > ul {
+		left: auto;
+    }
+	.main-navigation ul ul ul {
+		top: 100%;
+	}
+	.main-navigation ul ul {
+		margin-left: 0;
+	}
+	input {
+		width: 100%;
+	}
+}
+.ct-top {
+	background-color: var(--ct-orange);
+	font-size: 15px;
+	letter-spacing: 0px;
+	text-transform: uppercase;
+	font-family: var(--bebas-font);
+}
+.ct-top > .ct-center{
+	min-height: 39px;
+}
+.ct-color-darkorange {
+	color: var(--ct-darkorange);
+}
+.ct-color-white {
+	color: var(--ct-white);
+}
+.ct-topnav {
+	background-color: var(--ct-silver);
+}
+.ct-callus {
+	width:100%;
+	line-height: 19px;
+}
+.ct-auth {
+	width:100%;
+	line-height: 18px;
+}
+.site-branding {
+	line-height: 0;
+}
+.site-branding > a.custom-logo-link {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	min-height: 109px;
+}
+.menu-toggle,.menu.nav-menu {
+		margin: 0 auto;
+}
+.menu.nav-menu {
+	font-size: 13px;
+	text-transform: uppercase;
+	color: var(--ct-gray-02);
+	font-family: var(--myriadpro-font);
+}
+.sub-menu{
+	color: var(--ct-gray-04);
+	font-family: var(--opensans-font);
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 25px;
+}
+.menu.nav-menu > li > a:hover,
+.menu.nav-menu > li:has(ul.sub-menu:hover) > a,
+.menu.nav-menu > li.focus > a {
+	border-bottom: 3px solid var(--ct-orange);
+}
+.main-navigation li > a:hover,
+.main-navigation li:has(ul.sub-menu:hover) > a,
+.main-navigation li.focus > a {
+	font-weight: bold;
+}
+button, 
+input[type=button], 
+input[type=submit], 
+input[type=reset] {
+	color: var(--ct-white);
+	background-color: var(--ct-orange);
+	cursor: pointer;
+	padding: 0.6em 1em 0.4em;
+	min-width: 98px;
+	min-height: 37px;
+	font-size: 13px;
+	font-weight: 700;
+	font-family: var(--opensans-font);
+}
+textarea {
+	resize: vertical;
+	min-height: 109px;
+	max-height: 400px;
+}
+.ct-title {
+	font-size: 23px;
+	line-height: 25px;
+	color: var(--ct-orange);
+	font-weight: 400;
+	font-family: var(--opensans-font);
+}
+.ct-line {
+	height: 6px;
+	background-color: var(--ct-gray-03);
+}
+.wpcf7-form-control {
+	background-color: var(--ct-lighter);
+	border: 1px solid rgba(0,0,0,0.07);
+	font-size: 14px;
+	letter-spacing: 0px;
+	line-height: 25px;
+	color: var(--ct-gray-06);
+	font-weight: 300;
+	font-family: var(--ubuntu-font);
+}
+.ct-break {
+	margin-top:20px;
+	margin-bottom:50px;
+}
+.ct-info {
+	font-size: 16px;
+	color: var(--ct-gray-05);
+	font-family: var(--myriadpro-font);
+}
+i.fa-brands:not(.fa-square-facebook) {
+	color: var(--ct-silver);
+	filter: brightness(75%);
+}
+.fa-square-facebook {
+	filter: brightness(5%);
+}
+h1, h2, h3, h4, h5, h6 {
+	color: var(--ct-orange);
+	font-family: var(--opensans-font);
+}
+.site-header a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.site-header a:visited {
+	color: inherit;
+}
+
+.site-header a:hover, .site-header a:focus, .site-header a:active {
+	color: inherit;
 }
