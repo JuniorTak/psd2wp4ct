@@ -1153,6 +1153,10 @@ object {
 .main-navigation li.focus > a {
 	font-weight: bold;
 }
+.breadcrumb{
+    background: var(--ct-white);
+    margin-top: 4%;
+}
 button, 
 input[type=button], 
 input[type=submit], 
@@ -1213,15 +1217,18 @@ h1, h2, h3, h4, h5, h6 {
 	color: var(--ct-orange);
 	font-family: var(--opensans-font);
 }
-.site-header a {
+.site-header a,
+.breadcrumb a {
 	color: inherit;
 	text-decoration: none;
 }
 
-.site-header a:visited {
+.site-header a:visited,
+.breadcrumb a:visited {
 	color: inherit;
 }
 
-.site-header a:hover, .site-header a:focus, .site-header a:active {
+.site-header a:hover, .site-header a:focus, .site-header a:active,
+.breadcrumb a:hover, .breadcrumb a:focus, .breadcrumb a:active {
 	color: inherit;
 }

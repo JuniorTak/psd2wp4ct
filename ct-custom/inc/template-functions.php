@@ -195,3 +195,33 @@ function pinterest_display() { ?>
 	<input type="url" name="pinterest_url" id="pinterest_url" class="regular-text" placeholder="https://pinterest.com/example" pattern="https://.*" size="30" value="<?php echo get_option('pinterest_url'); ?>" />
 <?php
 }
+
+/**
+ * Breadcrumb | By Hyppolite
+ */
+function get_breadcrumb() {
+
+    echo '<a href="'.esc_url( home_url( '/' ) ).'" rel="nofollow">Home</a>';
+
+    if (is_category() || is_single()) {
+    	if (!is_single()) {
+	    	echo '&ensp;/&ensp;<strong>';
+	        the_category('/');
+	        echo '</strong>';
+	    }
+	    else{
+	        echo '&ensp;/&ensp;';
+	        the_category(' / ');
+	        echo '&ensp;/&ensp;';
+	        the_title('<strong>', '</strong>');
+	    }
+    } elseif (is_page()) {
+        echo '&ensp;/&ensp;';
+        the_title('<strong>', '</strong>');
+    } elseif (is_search()) {
+        echo '&ensp;/&ensp;<strong>Search Results for... ';
+        echo '"<em>';
+        echo the_search_query();
+        echo '</em>"</strong>';
+    }
+}

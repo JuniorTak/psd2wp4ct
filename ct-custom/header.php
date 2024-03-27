@@ -81,3 +81,8 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+		<?php if (!is_home() && !is_front_page()): ?>
+		<div class="breadcrumb">
+			<?php get_breadcrumb(); ?>
+        </div>
+        <?php endif; ?>
