@@ -4,7 +4,7 @@
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
  */
-( function() {
+( function () {
 	var container, button, menu, links, i, len;
 
 	container = document.getElementById( 'site-navigation' );
@@ -30,7 +30,7 @@
 		menu.className += ' nav-menu';
 	}
 
-	button.onclick = function() {
+	button.onclick = function () {
 		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
 			container.className = container.className.replace( ' toggled', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
@@ -43,7 +43,7 @@
 	};
 
 	// Get all the link elements within the menu.
-	links    = menu.getElementsByTagName( 'a' );
+	links = menu.getElementsByTagName( 'a' );
 
 	// Each time a menu link is focused or blurred, toggle focus.
 	for ( i = 0, len = links.length; i < len; i++ ) {
@@ -76,12 +76,12 @@
 	/**
 	 * Toggles `focus` class to allow submenu access on tablets.
 	 */
-	( function( container ) {
+	( function ( container ) {
 		var touchStartFn, i,
 			parentLink = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
 
 		if ( 'ontouchstart' in window ) {
-			touchStartFn = function( e ) {
+			touchStartFn = function ( e ) {
 				var menuItem = this.parentNode, i;
 
 				if ( ! menuItem.classList.contains( 'focus' ) ) {

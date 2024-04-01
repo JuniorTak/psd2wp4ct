@@ -30,7 +30,7 @@
 			<div class="ct-center">
 				<div class="ct-callus">
 					<span class="ct-color-darkorange">CALL US NOW!</span>&ensp;
-					<span class="ct-color-white"><?php echo get_option('phone'); ?></span>
+					<span class="ct-color-white"><?php echo get_option( 'phone' ); ?></span>
 				</div>
 				<div class="ct-auth">
 					<span class="ct-color-darkorange"><a href="#">LOGIN</a></span>&ensp;
@@ -42,10 +42,10 @@
 			<div class="ct-center">
 				<div class="site-branding">
 					<?php
-					if (get_option('logo')) :
+					if ( get_option( 'logo' ) ) :
 						?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="custom-logo-link" rel="home">
-							<img src="<?php echo get_option('logo'); ?>" class="custom-logo" alt="<?php echo get_bloginfo( 'name' ); ?>">
+							<img src="<?php echo get_option( 'logo' ); ?>" class="custom-logo" alt="<?php echo get_bloginfo( 'name' ); ?>">
 						</a>
 						<?php
 					else :
@@ -70,10 +70,12 @@
 				<nav id="site-navigation" class="main-navigation">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'MENU', 'ct-custom' ); ?></button>
 					<?php
-					wp_nav_menu( array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
-					) );
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+						)
+					);
 					?>
 				</nav><!-- #site-navigation -->
 			</div>
@@ -81,8 +83,8 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
-		<?php if (!is_home() && !is_front_page()): ?>
+		<?php if ( ! is_home() && ! is_front_page() ) : ?>
 		<div class="breadcrumb">
 			<?php get_breadcrumb(); ?>
-        </div>
-        <?php endif; ?>
+		</div>
+		<?php endif; ?>

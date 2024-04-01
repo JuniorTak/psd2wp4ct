@@ -175,7 +175,7 @@ if ( ! function_exists( 'ct_custom_woocommerce_wrapper_after' ) ) {
 	 * @return void
 	 */
 	function ct_custom_woocommerce_wrapper_after() {
-			?>
+		?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 		<?php
